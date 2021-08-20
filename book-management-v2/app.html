@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:100%;
+            border:1px solid gray;
+        }
+        th{
+            background-color:black;
+            color:white;
+            font-size:1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        td{
+            font-size:1.2em;
+            border:1px solid gray;
+        }
+    </style>
+        
+    
+</head>
+<body onload="showBook(books[0]);">
+    <h1>About <span id='bookTitle'></span></h1>
+
+    <h2>by <span id="bookAuthor"></span></h2>
+
+    <p>Price <span id="bookPrice"></span></p>
+
+    <p><span id="bookRating">Average Rating 4.2</span><!--show the actual rating here --></p>
+
+    <table>
+        <thead>
+           <tr>
+               <th>Description</th>
+               <th>Rating</th>
+           </tr>
+        </thead>
+        <tbody id="reviews">
+
+        </tbody>
+    </table>
+    <input type="button" value="Previous" onclick="previous()"/>
+    <input type="button" value="Next" onclick="next()"/> 
+    <!--provide some technique to navigate between books -->
+
+    <script src="book.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
