@@ -31,7 +31,7 @@ books[5].addReview(createReview('Dramatic', 4.5));
 
 
 
-function showBook(book){
+function showBook(book, bookNum, totalBooks){
 
     document.getElementById("bookTitle").innerHTML=book.title;
     document.getElementById("bookAuthor").innerHTML=book.author;
@@ -49,6 +49,7 @@ function showBook(book){
                             </tr>
                             `
     }
+    document.getElementById("bookNum").innerHTML=`${bookNum}/${totalBooks}`
 }
 
 let index=0;
@@ -57,14 +58,14 @@ function next(){
     index++;;
     if(index>=books.length)
         index=books.length-1;
-    showBook(books[index]);
+    showBook(books[index], index+1, books.length);
 }
 
 function previous(){
     index--;
     if(index<=0)
         index=0;
-    showBook(books[index]);
+    showBook(books[index], index+1, books.length);
 }
 
 

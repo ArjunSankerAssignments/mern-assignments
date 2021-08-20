@@ -25,7 +25,7 @@
         
     
 </head>
-<body onload="showBook(books[0]);">
+<body onload="showBook(books[0], 1, books.length);">
     <h1>About <span id='bookTitle'></span></h1>
 
     <h2>by <span id="bookAuthor"></span></h2>
@@ -45,8 +45,9 @@
 
         </tbody>
     </table>
-    <input type="button" value="Previous" onclick="previous()"/>
-    <input type="button" value="Next" onclick="next()"/> 
+    <span></spam><input type="button" value="Previous" onclick="previous()"/>
+    <span id="bookNum"></span>
+    <input type="button" value="Next" onclick="next()"/></span>
     <!--provide some technique to navigate between books -->
 
     <script src="book.js"></script>
