@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/46306f7b66.js" crossorigin="anonymous"></script>
+    <title>Details Page</title>
+    <style>
+        h1{
+            font-size: 3em;
+        }
+
+        .banner{
+            background-color:rgb(128, 128, 128);
+            color:white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .imageDisplay{
+            text-align: center;
+        }
+
+        img{
+            width: 300px;
+            height: 400px;
+        }
+
+        button {
+            background-color: gray;
+            border: none;
+            color: rgb(11, 220, 247);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onload="printDetails()">
+
+    <h1>Book's Web</h1>
+    <div id="bookDetails"></div>
+    
+    <div>
+        <div id="imgDisp" class="imageDisplay"></div>
+    </div>
+    
+    </br>
+    </br>
+    <div id="inputPanel">
+        <input type="text" name="Reviewer" id="reviewerName" placeholder="Reviewer Name"></input>
+        </br>
+        </br>
+        <label for="rating">Rating : </label>
+        <select name="rating" id="rating">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        </br>
+        </br>
+        <label for="description">Details : </label>
+        </br>
+        <textarea name="description" id="details" cols="50" rows="10"></textarea>
+    </div>
+
+
+    <br>
+    <br>
+
+    <div>
+        <button id="saveReview" onclick="saveReview()">
+            Save <i class="fas fa-save"></i>
+        </button>
+    </div>
+    
+    <br>
+    <br>
+
+    <div id="reviewPanel" style="border: thin solid black">
+
+    </div>
+    
+    <script src="detailsPage.js"></script>
+</body>
+</html>

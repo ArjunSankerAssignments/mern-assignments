@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/46306f7b66.js" crossorigin="anonymous"></script>
+   
+    <style>
+        
+        button {
+            background-color: gray;
+            border: none;
+            color: rgb(97, 247, 11);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+       
+        table{
+            width:100%;
+            border:1px solid gray;
+        }
+        
+        th{
+            background-color:gray;
+            color:white;
+            font-size:1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        td{
+            font-size:1.2em;
+            border:1px solid gray;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 3em;
+        }
+
+        .banner{
+            background-color:rgb(128, 128, 128);
+            color:white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        img{
+            width: 150px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+
+<body onload="init()">
+    <div class="banner">
+        <h1>Book's Web</h1>
+    </div>
+    
+    </br>
+    
+    <span>
+        <button id="addBook" onclick="addBook()">
+            Book <i class="fas fa-plus-square"></i>
+        </button>
+    </span>
+
+    </br>
+    </br>
+
+    <div>
+        
+        <table>
+            
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="booksTable">
+                
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+<script src="books.js"></script>
+
+</body>
+
+</html>

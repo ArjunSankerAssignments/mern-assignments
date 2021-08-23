@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/46306f7b66.js" crossorigin="anonymous"></script>
+    <style>
+        button {
+            background-color: gray;
+            border: none;
+            color: rgb(11, 220, 247);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <h2>Add Book</h2>
+
+    <div id="inputPanel">
+        <p id="bookId"></p>
+        <div>
+            <input type="text" placeholder="Book Title", id="bookTitle" style="width:500px"></input>
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="text" placeholder="Author", id="author" style="width:500px"></input>
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="text" placeholder="Price", id="price" style="width:500px"></input>
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="text" placeholder="Cover Page", id="cover" style="width:500px"></input>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <div>
+        <button id="saveBook" onclick="saveBook()">
+            Save <i class="fas fa-save"></i>
+        </button>
+    </div>
+
+    <script src="addBook.js"></script>
+</body>
+</html>
