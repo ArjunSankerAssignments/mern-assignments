@@ -50,7 +50,6 @@ function showBookDetails(){
     setHtml('book-author',book.author);
     setHtml('book-details',book.description);
     document.getElementById('cover-image').src=book.cover;
-    localStorage.setItem("currentBook", book._id);
 
        
 }
@@ -81,35 +80,13 @@ function addReview(){
     let reviewContainer = document.getElementById("reviews");
 
     let contents = reviewContainer.innerHTML;
-
-    let bookId = localStorage.getItem("currentBook");
-    let bookReviews = JSON.parse(localStorage.getItem(bookId));
-
-    if(bookReviews !== null){
-        bookReviews.push({
-            name: reviewerName,
-            rating: reviewerRating,
-            comment: reviewerComment 
-        });
-        contents = "";
-        localStorage.setItem(bookId, JSON.stringify(bookReviews))
-    }else{
-        let bookReviews = [];
-        bookReviews.push({
-            name: reviewerName,
-            rating: reviewerRating,
-            comment: reviewerComment 
-        });
-    }
     
-    for(let book of bookReviews){
-        contents += `
-            <div class="review">
-            <h2>${book.name} rate ${book.rating}</h2>
-            <p>${book.comment}</p>
-            </div>
-        `;
-    }
+    contents += `
+    <div class="review">
+        <h2>${reviewerName} rate ${reviewerRating}</h2>
+        <p>${reviewerComment}</p>
+    </div>
+    `
     reviewContainer.innerHTML = contents;
 }
 
