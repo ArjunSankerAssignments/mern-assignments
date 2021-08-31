@@ -30,7 +30,7 @@ const findPrimesAsync = async (min,max)=>{
 }
 
 
-// findPrimesAsync(-10,0)
+// findPrimesAsync(0,100000)
 //     .then(primes=>console.log("Primes Length", primes.length))
 //     .catch(e=>console.log(e));
 // console.log("Printing Primes");

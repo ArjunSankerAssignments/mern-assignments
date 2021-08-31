@@ -16,8 +16,10 @@ describe('findPrimesAsync tests',()=>{
         findPrimesAsync(10,1).catch(e=>expect(e.message).toMatch(/Invalid Range*/))
     );
 
-    it('findPrimeAsync(-50,0) should return 0 primes',()=>
-        findPrimesAsync(-50,0).then(primes=>expect(primes.length).toBe(0))
+    it('findPrimeAsync(-50,0) should return 0 primes',(done)=>{
+        findPrimesAsync(0,100000).then(primes=>expect(primes.length).toBe(9592))
+        done();
+    }
     );
 
 });

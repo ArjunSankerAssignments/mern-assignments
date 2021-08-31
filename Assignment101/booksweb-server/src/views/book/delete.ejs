@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/font-awesome.min.css">
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+    
+    <div class='jumbotron'>
+        <h1 class='jumbotron'>Book's Web</h1>
+        <nav>
+            <ul>
+                <li><a href="/book/list">Books</a></li>
+                <li><a href="/book/add">Add Books</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="conatiner">
+
+        <h2>Delete <%= book.title %> </h2>
+        <br>
+        <p>This Process cannot be undone</p>
+        <form action="/book/delete" method="post">
+            <div class="form-group">
+                <input type="hidden" name="delID" value="<%=book._id%> "/>
+                <button class='btn btn-primary btn-lg btn-danger' type="submit" value=>Yes! Delete it</button>
+            </div>
+            <br>
+            <a class='btn btn-sm btn-primary' href="/book/list">No Take me back</a>
+        </form>
+
+    </div>
+
+</body>
+</html>
