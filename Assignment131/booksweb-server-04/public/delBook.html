@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">    
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+    <div class='jumbotron'>
+        <h1 class='jumbotron'>Book's Web</h1>
+        <nav>
+            <ul style="text-align: left; display: inline-block; vertical-align: middle;">
+                <li><a href="index.html">Books</a></li>
+                <li><a href="addBook.html">Add Books</a></li>
+            </ul>
+
+            <ul style="text-align: right;  display: inline-block; vertical-align: middle;">
+                <li><a href="index.html">Login</a></li>
+                <li><a href="/book/add">Register</a></li>
+            </ul>
+        </span>
+        </nav>
+    </div>
+
+    <div class="conatiner">
+
+        <h2 id="bookTitle"></h2>
+        <br>
+        <p>This Process cannot be undone</p>
+        <div>
+            <button type="button" class='btn btn-primary btn-sm btn-danger' onClick="confirmDelete()">Yes! Delete it</button>
+        </div>
+        <br>
+        <a class='btn btn-lg btn-primary' href="index.html">No Take me back</a>
+
+    </div>
+
+    <script>
+        const url='http://localhost:5000/api/books';
+        const bookToDelete = sessionStorage.getItem("toDelete");
+        console.log("isbn Delete", bookToDelete);
+
+        const initDelPage = async ()=>{
+            let res = await fetch(`${url}/${bookToDelete}`);
+            let book = await res.json();
+            console.log("book", book);
+            let h1 = document.getElementById("bookTitle");
+            h1.innerHTML=`Are you sure you want to delete ${book.title} with ISBN: ${book.isbn}`;
+        }
+
+        initDelPage();
+
+        const confirmDelete =()=>{
+            $.ajax({
+                    url: `${url}/${bookToDelete}`,
+                    method: 'DELETE',
+                    success: function(result) {
+                    console.log(result)
+                    }
+            });
+
+            //console.log("Deleted", res);
+        }
+
+    </script>
+    
+</body>
+</html>

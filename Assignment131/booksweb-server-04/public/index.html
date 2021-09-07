@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List All Books</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">    
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    
+    <div class='jumbotron'>
+        <h1 class='jumbotron'>Book's Web</h1>
+        <nav>
+            <ul style="text-align: left; display: inline-block; vertical-align: middle;">
+                <li><a href="index.html">Books</a></li>
+                <li><a href="addBook.html">Add Books</a></li>
+            </ul>
+
+            <ul style="text-align: right;  display: inline-block; vertical-align: middle;">
+                <li><a href="index.html">Login</a></li>
+                <li><a href="/book/add">Register</a></li>
+            </ul>
+        </span>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Book List</h1>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookList">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const url='http://localhost:5000/api/books';
+        const loadAllBooks=async()=>{
+            
+            console.log('loading books');
+            let response= await fetch(url); 
+            let books=await response.json();
+            
+            console.log('total books',books.length);
+            let data='';
+            for(let book of books){
+                console.log(book.cover);
+                data+=`
+                <tr>
+                    <td><img class='thumbnail' src=${book.cover} title="${book.title}" alt="${book.title}" srcset=""></td>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>
+                        <button class='btn btn-sm btn-primary' href="/book/details/${book.isbn}">Details</button>
+                        <button class='btn btn-sm btn-danger' value='${book.isbn}' onClick='delBook(${book.isbn})'>Delete</button>
+                    </td>
+                </tr>
+                `;
+            }
+            document.getElementById("bookList").innerHTML=data;
+        }
+        loadAllBooks();
+
+        const delBook = (isbn)=>{
+            console.log(isbn);
+            sessionStorage.setItem("toDelete", isbn);
+            window.location = "delBook.html";
+
+        }
+    </script>
+</body>
+</html>
