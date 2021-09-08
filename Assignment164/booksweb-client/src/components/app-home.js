@@ -46,7 +46,7 @@ export default class component extends React.Component{
 
         this.setState({
             imgUrl:urls[uIndx],
-            initQuote:quotes[qIndx]
+            initQuote:quotes[qIndx]                                                         
         });
         console.log(urls[uIndx], quotes[qIndx]);
         console.log(this.state);
