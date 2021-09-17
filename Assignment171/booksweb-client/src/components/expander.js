@@ -8,7 +8,8 @@ const getStringOflen=(str, len)=>{
     
     let words = str.split(" ").slice(0,len);
     
-    return words.reduce((acc, current)=>acc+" "+current);
+    //return words.reduce((acc, current)=>acc+" "+current);
+    return words.join(" ");
 }
 
 const Component=({title, content, short})=>{

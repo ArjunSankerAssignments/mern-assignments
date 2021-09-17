@@ -1,0 +1,80 @@
+.author{
+    margin-top: 20px;
+}
+
+.author img{
+    /* /* margin-top: 10px; */
+    margin-left: 50px;
+    margin-right: 50px; 
+    width: 200px;
+    height: 200px;
+    
+}
+.author h5{
+    text-align: center;
+}
+
+.author-list ul{
+  list-style: none;  
+}
+.author-list ul li{
+    float: left;
+    margin-bottom: 50px;
+}
+.author .links{
+    align-items: center;
+    text-align: center;
+}
+
+.author-details h3{
+    font-family: 'Allison';
+    font-size:50px;
+    padding-left:5px;
+    
+}
+
+.author-details p{
+    font-family: 'Roboto';
+    font-size:20px;
+    padding-left:5px;
+    
+}
+
+
+.book-details .book-info{
+    display:flex;
+    align-items:flex-start;
+    
+}
+
+.author-details .authorInfo img{
+    width:300px;
+    max-width:300px;
+    flex:1;  
+    margin:10px;
+    border: 10px solid black;
+    padding:5px;
+    border-radius:10px;
+    box-shadow: -5px -5px 5px gray;
+
+}
+
+.author-details .authorInfo .nameID{
+    flex:4;
+    padding-left: 10px;
+    float: right;
+    margin-right: 300px;
+    
+    margin-top: 150px;
+    
+    
+}
+
+.author-details .authorInfo .nameID h3{
+    font-family: 'Allison';
+    font-weight: bold;
+    font-size:50px;
+    padding-left:5px;
+    
+    
+}

@@ -1,0 +1,4 @@
+export const LIST_BOOKS="LIST_BOOKS";
+export const BOOK_DETAILS="BOOK_DETAILS";
+export const LIST_AUTHORS="LIST_AUTHORS";
+export const AUTHOR_DETAILS="AUTHOR_DETAILS";

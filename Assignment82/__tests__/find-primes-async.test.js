@@ -17,8 +17,11 @@ describe('findPrimesAsync tests',()=>{
     );
 
     it('findPrimeAsync(-50,0) should return 0 primes',(done)=>{
-        findPrimesAsync(0,100000).then(primes=>expect(primes.length).toBe(9592))
-        done();
+        findPrimesAsync(0,100000).then(primes=>{
+            expect(primes.length).toBe(9592);
+            done();
+        })
+                                                            
     }
     );
 
